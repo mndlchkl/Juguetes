@@ -1,39 +1,54 @@
-<html >
+<html ng-app="datosApp">
 
 <head>
   <meta charset="UTF-8">
 	<title>Registrar / Inscribir</title>
+    	<script type="text/javascript" src="angular.min.js"></script>
+
 </head>
     <h1>: LISTAR INSCRITOS</h1>
 <body>
 	
     
-    <!-- FORMULARIO PARA mostrar listas de INSCRITOS   filtrando por sede-->
-<form >
+    <!-- FORMULARIO PARA mostrar listas de INSCRITOS   de cierta entidad-->
+<form method="post" action="php/listar.php">
 
-Entidad  <br><input type="text" name="entidad" value=""><br><br> <!--Un Dropdown  -->    
+Entidad  <br><select>
+  <option value="1">Sede</option>
+  <option value="2">Jardin</option>
+  <option value="17">Otro</option>
+  <option value="0">todos</option>
+</select> <!--Un Dropdown  -->    <br><br>
 
-Periodo  <br><input type="text" name="periodo" value="2016"><br><br> <!--Un Dropdown , 2016 solo por ahora -->    
+Periodo  <br><select>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+</select> <br><br> 
  
 
-<input type="submit" value="Buscar">  
+<input type="submit" value="Buscar" >  
 
 
 </form> 
 
 <!-- TABLA CON LOS RESULTADOS DE LA BUSQUEDA -- NOMBRES DE LAS COLUMNAS-->
-  <div>
+  <div ng-controller="controladorDatos">
     <table>
-     <tr>
-            <td>nombre</td> <br>
-            <td>edad</td> <br>
-            <td>Sede</td> <br>
-            <td>Estado</td> <br>
-            <td>Fecha ingreso al sistema</td> <br>
-            <td>ingresado por</td> <br>
-
-
-    </tr>
+        <thead>
+            <tr>
+            <th>Nombre</th>
+            <th>Rut</th>
+            <th>Edad</th>
+            <th>Genero</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="registro in lista">
+            <td>{{registro.Nombre}}</td>
+            <td>{{registro.Rut}}</td>
+            <td>{{registro.Edad}}</td>
+            <td>{{registro.genero}}</td>
+        </tr>
+        
       </table>     
     </div> 
    
@@ -42,7 +57,19 @@ Periodo  <br><input type="text" name="periodo" value="2016"><br><br> <!--Un Drop
         
 
     <footer>  LINKS A LAS DEMAS PAGINAS</footer>
-
+<br><br>
+    
+<script type="text/javascript" >
+    var misDatos = angular.module('datosApp',[]);
+    misDatos.controller('controladorDatos', function($scope, $http){
+       $scope.importar = function(){
+           $http.get('php/listar.php').success(function(datos){
+               $scope.lista = datos;
+           });       
+       } 
+        $scope.importar();
+    });    
+</script>    
     
     
 </html>

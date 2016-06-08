@@ -13,28 +13,49 @@
     <!-- FORMULARIO PARA agrupar POR EDAD, GENERO Y SEDE A LOS INSCRITOS-->
 <form >
 
-Entidad  <br><input type="text" name="entidad" value=""><br><br> <!--Un Dropdown  -->    
+Entidad  <br><select>
+  <option value="1">Sede</option>
+  <option value="2">Jardin</option>
+  <option value="17">Otro</option>
+  <option value="0">todos</option>
+</select> <!--Un Dropdown  -->    <br><br>  
     
  <br><input type="radio" name="gender" value="F" checked> Femenino<br>
             <input type="radio" name="gender" value="M">Masculino<br><br>
  
-Rut <br><input type="text" name="rut" value="" placeholder="Ingrese el rut"><br><br>
 <input type="submit" value="Buscar">
 
 </form> 
 
 <!-- TABLA CON LOS RESULTADOS DE LA BUSQUEDA-->
-<div>  <table>
-     <tr>
-            <td>Sede</td> <br>
-            <td></td> <br>
-            <td>Sede</td> <br>
-            <td>Estado</td> <br>
-            <td>Fecha</td> <br>
-
-    </tr>
-      </table>  </div> 
-   
+ <div >
+    <table>
+        <thead>
+            <tr>
+            <th>Total</th>
+            <th>Gen</th>
+            <th>Entidad</th>
+            <th>0 a 2 años</th>
+            <th>3 y 4 años</th>
+            <th>5 y 6 años</th>
+            <th>7 y 8 años</th>
+            <th>9 y 10 años</th>
+            </tr>
+        </thead>
+        <tr >
+            <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+             <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+            <td>{{}}</td>
+        </tr>
+        
+      </table>     
+    </div> 
+   <br><br>
 </body>
 
     <footer>  LINKS A LAS DEMAS PAGINAS</footer>
