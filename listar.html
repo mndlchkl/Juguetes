@@ -11,24 +11,19 @@
 	
     
     <!-- FORMULARIO PARA mostrar listas de INSCRITOS   de cierta entidad-->
-<form method="post" action="php/listar.php">
+<form >
 
 Entidad  <br><select>
   <option value="1">Sede</option>
   <option value="2">Jardin</option>
   <option value="17">Otro</option>
-  <option value="0">todos</option>
-</select> <!--Un Dropdown  -->    <br><br>
+</select>    <br><br>
 
 Periodo  <br><select>
   <option value="2015">2015</option>
   <option value="2016">2016</option>
 </select> <br><br> 
- 
-
-<input type="submit" value="Buscar" >  
-
-
+<input ng-click="importar()" type="submit" value="Buscar" >  
 </form> 
 
 <!-- TABLA CON LOS RESULTADOS DE LA BUSQUEDA -- NOMBRES DE LAS COLUMNAS-->
@@ -50,12 +45,9 @@ Periodo  <br><select>
         </tr>
         
       </table>     
-    </div> 
-   
+    </div>    
 </body>
-
-        
-
+    
     <footer>  LINKS A LAS DEMAS PAGINAS</footer>
 <br><br>
     

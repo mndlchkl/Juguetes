@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enviar post</title>
+ 
+    </head>
+
+    <body class="ng-scope" ng-app="myApp"  ng-controller="myController">
+        <form>
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input ng-model="usuario.usuario" type="text" class="form-control" id="usuario" placeholder="Escriba el usuario">
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input ng-model="usuario.nombre" type="text" class="form-control" id="nombre" placeholder="Escriba el nombre">
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input ng-model="usuario.apellido" type="text" class="form-control" id="apellido" placeholder="Escriba el apellido">
+            </div>
+
+        </form>
+        <button type="submit" class="btn btn-default" ng-click="enviar()">Enviar</button>
+
+    </body>
+</html>
