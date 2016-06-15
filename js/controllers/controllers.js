@@ -13,3 +13,28 @@ app.controller('myController', ['$scope', 'PhpService',
             PhpService.enviar(enviar);
         };
     }]);
+
+
+app.controller('Listar_ctrl', ['$scope', 'PhpService',
+   function ($scope, PhpService) {
+        $scope.reg= {};
+        $scope.lista={};
+        $scope.listar = function () {
+            var listar = {};
+            listar = $.param({"listar": JSON.stringify($scope.reg)}); //convertimos a url string todos los parametros para enviarlos como tipo 'form' 
+            PhpService.listar(listar);
+           
+      
+        
+        };
+       
+       $scope.cargar = function(){
+          PhpService.obtener().$promise.then(function(resultado){
+              $scope.lista =  resultado.resultado;
+              
+          }) ;
+           
+       };
+       
+       
+    }]);
