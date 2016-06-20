@@ -4,6 +4,9 @@
 .section-padding2 {
   padding-top: 60px;
 }
+.navbar {
+  margin-bottom: 0px;
+}
 section h2.titulo {
   font-size: 40px;
   margin-top: 0;
