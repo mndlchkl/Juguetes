@@ -32,7 +32,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="inscribir.html">Inscripción</a></li> 
             <li><a href="buscar.html">Busqueda</a></li>
-            <li><a href="listar.html">Crear Listado</a></li>
+            <li><a href="listar.html">Listar Inscritos</a></li>
             <li><a href="ordenar.html">Orden</a></li>
           </ul>
       
@@ -41,25 +41,64 @@
     </nav>
   </header>
 	
+  <section>
+    <div class="container section-padding1">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2 class="titulo">ORDEN</h2>
+        </div>
+      </div>
 
-  <h1>:ORDENAR POR EDADES</h1>
-    
-    <!-- FORMULARIO PARA agrupar POR EDAD, GENERO Y SEDE A LOS INSCRITOS-->
-<form >
+      <div class="row section-padding2">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form>
 
-Entidad  <br><select>
-  <option value="1">Sede</option>
-  <option value="2">Jardin</option>
-  <option value="17">Otro</option>
-  <option value="0">todos</option>
-</select> <!--Un Dropdown  -->    <br><br>  
-    
- <br><input type="radio" name="gender" value="F" checked> Femenino<br>
-            <input type="radio" name="gender" value="M">Masculino<br><br>
- 
-<input type="submit" value="Buscar">
+              <label for="entidad">Entidad</label>
+              <div class="form-group">
+                <select ng-model="benef.entidad" class="form-control" placeholder="Entidad" id="entidad">
+                  <option value="1">Sede</option>
+                  <option value="2">Jardín</option>
+                  <option value="17">Agrupación</option>
+                  <option value="0">Otro</option>
+                </select>
+              </div>
 
-</form> 
+              <label>Genero</label>
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <div class="radio">
+                    <label>
+                      <input ng-model="benef.genero" type="radio" name="optionsRadios" id="radioMasculino" value="M">
+                      Masculino
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <div class="radio">
+                    <label>
+                      <input ng-model="benef.genero" type="radio" name="optionsRadios" id="radioFemenino" value="F">
+                      Femenino
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <label for="rut">Ingresar Rut</label>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Ejemplo: 12345678-9" id="rut" name="rut">
+              </div>
+              <div class="boton text-center">
+                <input class="btn btn-default" type="button" value="Buscar">
+              </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+
 
 <!-- TABLA CON LOS RESULTADOS DE LA BUSQUEDA-->
  <div >
@@ -91,8 +130,4 @@ Entidad  <br><select>
     </div> 
    <br><br>
 </body>
-
-    <footer>  LINKS A LAS DEMAS PAGINAS</footer>
-
-    
 </html>

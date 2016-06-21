@@ -36,7 +36,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="inscribir.html">Inscripción</a></li> 
             <li><a href="buscar.html">Busqueda</a></li>
-            <li><a href="listar.html">Crear Listado</a></li>
+            <li><a href="listar.html">Listar Inscritos</a></li>
             <li><a href="ordenar.html">Orden</a></li>
           </ul>
       
@@ -45,33 +45,30 @@
     </nav>
   </header>
 
+   <section>
+    <div class="container section-padding1">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h2 class="titulo">INCRITOS</h2>
+        </div>
+      </div>
+
+      <div class="row section-padding2">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form>
+
+              <div class="boton text-center">
+                <input class="btn btn-default" ng-click="listar()" type="button" value="Lista">
+              </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </section>
 
 
-
-      <h2>: LISTAR INSCRITOS</h2>
- <br><br>
-    
-    <!-- FORMULARIO PARA mostrar listas de INSCRITOS   de cierta entidad-->
-
-
-<!--
-Entidad  <br><select  ng-model="reg.entidad">
-  <option value="1">Sede</option>
-  <option value="2">Jardin</option>
-  <option value="17">Otro</option>
-</select>    <br>
-
-Periodo  <br><select  ng-model="reg.periodo">
-  <option value="2015">2015</option>
-  <option value="2016">2016</option>
-</select> <br><br> 
-<input class="btn btn-default" ng-click="listar()" value="Buscar" type="submit">  
-</form> 
--->
-    
-    <input .btn-primary class="btn-primary" ng-click="listar()" value="Listar todos los inscritos" type="button">  
-
-<!-- TABLA CON LOS RESULTADOS DE LA BUSQUEDA -- NOMBRES DE LAS COLUMNAS-->
+<!-- TABLA CON LOS RESULTADOS DE LA BUSQUEDA NOMBRES DE LAS COLUMNAS-->
   <div>
        <br><br>
     <table>
@@ -88,8 +85,6 @@ Periodo  <br><select  ng-model="reg.periodo">
       </tbody></table>     
     </div>    
 
-
-<br><br>
 
     
     
