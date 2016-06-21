@@ -11,15 +11,16 @@ section h2.titulo {
   font-size: 40px;
   margin-top: 0;
 }
-section h3.subtitulo {
+/*section h3.subtitulo {
   font-size: 16px;
   font-style: italic;
   margin-bottom: 0;
-}
+}*/
 .boton {
-  padding: 20px 0;
+  padding: 20px 0
 }
 footer {
+  padding-bottom: 60px;
   text-align: center;
 }
 footer span.copyright {
