@@ -6,13 +6,15 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/estilo.css">
-  <script src="libs/jquery/jquery.min.js"></script>
-  <script src="libs/bootstrap/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
+
   <script src="libs/angular/angular.min.js"></script>
   <script src="libs/angular/angular-resource.js"></script>
   <script src="js/controllers/controllers.js"></script>
   <script src="js/services/service_inscribir.js"></script>
   <script src="js/validations.js"></script>
+
+  
 </head>  
 
 <body class="ng-scope" ng-app="myApp" ng-controller="myController">
@@ -82,7 +84,12 @@
               </div>
               <label for="fecha_nac">Fecha de Nacimiento</label>
               <div class="form-group">
-                <input ng-model="benef.fecha_nac" type="text" class="form-control" placeholder="Ejemplo: DD/MM/AAAA" id="fecha_nac">
+                <div class="input-group date fecha" data-date="" data-date-format="dd/mm/yyyy">
+                    <input ng-model="benef.fecha_nac" class="form-control" type="text" value="" readonly id="fecha_nac">
+
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
               </div>
               <label for="dire">Dirección</label>
               <div class="form-group">
@@ -148,6 +155,23 @@
       </div>
     </div>
   </footer>
-   
+
+  <script src="libs/jquery/jquery.min.js"></script>
+  <script src="libs/bootstrap/bootstrap.min.js"></script>
+  <script src="libs/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+  <script src="libs/datetimepicker/locales/bootstrap-datetimepicker.es.js"></script>
+
+  <script type="text/javascript">
+    $('.fecha').datetimepicker({
+        language:  'es',
+        startView: 4,
+        minView: 2,
+        weekStart: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        forceParse: 0
+    });
+  </script>  
+
 </body>
 </html>
